@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Akash Rajendra</title>
+        <meta name="viewport" content="width=device-width">
+    	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900" rel="stylesheet">
+    	<link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+    	<div class="errthin">
+            <ul class="sidemenu">
+                <li><a href="#"><h1 class="logo">Akash Rajendra</h1></a></li>
+                <li><a href="#psh">Photoshopped</a></li>
+                <li><a href="#dwl">Downloads</a></li>
+                <li><a href="#abt">About</a></li>
+                <li><a href="#cnt">Contact</a></li>
+            </ul>
+            <div class="sitecontent">
+                <div class="subcontent" id="psh">
+                    <h1>Photoshopped</h1>
+                    <p>Here are some of my photoshop edits</p>
+                    <div class="col-12">
+                        <div class="col-4">
+                            <a href="camel burma.png" target="_blank"><img data-src="camel burma.png" alt="When the desert meets Burma"></a>
+                            <p>When the desert meets Burma</p>
+                        </div>
+                        <div class="col-4">
+                            <a href="mountains in the sky.png" target="_blank"><img data-src="mountains in the sky.png" alt="Mountains in the sky"></a>
+                            <p>Mountains in the sky</p>
+                        </div>
+                        <div class="col-4">
+                            <a href="sparklin flag.png" target="_blank"><img data-src="sparklin flag.png" alt="Sparkling Flag"></a>
+                            <p>Sparkling Flag</p>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+
+                <div class="subcontent" id="dwl">
+                    <h1>Downloads</h1>
+                    <p>Some downloadable stuff I've made.</p>
+                    <div class="col-12">
+                        <div class="col-6">
+                            <img data-src="pdfmergejs.png">
+                            <h3><a href="https://www.npmjs.com/package/pdfmerge">PDFMergeJS</a></h3>
+                            <p>Node module to merge multiple PDF files into one. Powered by Python</p>
+                        </div>
+                        <div class="col-6">
+                            <img data-src="log2file.png">
+                            <h3><a href="https://www.npmjs.com/package/log2file">log2file</a></h3>
+                            <p>Simple module to save logs for your NodeJS application!</p>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+
+                <div class="subcontent" id="abt">
+                    <h1>About</h1>
+                    <p>Stuff you wanna know about me.</p>
+                    <ul>
+                        <li><h3>I'm 17</h3></li>
+                        <li><h3>I know</h3></li>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>C++</li>
+                            <li>Python</li>
+                            <li>and more..</li>
+                        </ul>
+                        <li><h3>I love</h3></li>
+                        <ul>
+                            <li>coding</li>
+                            <li>photoshop</li>
+                            <li>roadtrips with friends</li>
+                            <li>anime</li>
+                            <li>and music ^_^</li>
+                        </ul>
+                    </ul>
+                    <div style="clear: both;"></div>
+                </div>
+
+                <div class="subcontent" id="cnt">
+                    <h1>Contact</h1>
+                    <p>wanna contact me?</p>
+                    <ul>
+                        <li><h3>I'm</h3></li>
+                        <ul>
+                            <li><a href="https://twitter.com/_akashrajendra">_akashrajendra</a> on Twitter</li>
+                            <li><a href="https://instagram.com/_akashrajendra">_akashrajendra</a> on Instagram</li>
+                            <li><a href="https://github.com/arjndr">arjndr</a> on GitHub</li>
+                            <li><a href="mailto:akash0rajendra@gmail.com">akash0rajendra@gmail.com</a> is my email</li>
+                        </ul>
+                    </ul>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+
+            <div style="clear: both;"></div>
+
+            <script type="text/javascript" src="touch.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.2.0/lazyload.min.js"></script>
+            <script type="text/javascript">
+                document.body.addEventListener('swr', function(){
+                    console.log('Right Swipe')
+                    document.querySelector('.sidemenu').classList += ' swiped'
+                }, false);
+                document.body.addEventListener('swl', function(){
+                    console.log('Left Swipe')
+                    if (document.querySelector('.sidemenu').classList.contains('swiped')) {
+                        document.querySelector('.sidemenu').classList.remove('swiped')
+                    }
+                }, false);
+                document.body.addEventListener('click', function(){
+                    if (document.querySelector('.sidemenu').classList.contains('swiped')) {
+                        document.querySelector('.sidemenu').classList.remove('swiped')
+                    }
+                }, false);
+                var myLazyLoad = new LazyLoad();
+            </script>
+        </div>
+    </body>
+</html>
+<!--
+    IGNORE
+Mike Koglin & MoodFreak (Sudhaus) - Octagon
+Justin Oh feat. Jennifer Yun - we chase the sun (jayeson andel remix)
+ -->

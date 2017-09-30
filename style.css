@@ -1,0 +1,131 @@
+*{
+	transition: all 0.3s;
+}
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 0px;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: 600;
+}
+
+a{
+	color: inherit;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+[class*="col-"] p{
+    margin: 0px;
+}
+
+[class*="col-"] img{
+	width: 100%;
+	height: auto;
+	border-radius: 3px;
+}
+
+.errthin{
+	padding: 40px;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.sidemenu{
+	position: fixed;
+	float: left;
+	list-style: none;
+	margin: 0px;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 160px;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+.sidemenu li{
+	margin-top: 5px;
+}
+
+.sidemenu a{
+	color: #323232;
+	display: inline;
+	text-decoration: none;
+}
+
+.sidemenu a:hover{
+	color: #aaa;
+}
+
+.logo{
+	font-weight: 900;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.sitecontent{
+	float: right;
+	height: 100%;
+	width: calc(100% - 160px);
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.subcontent{
+	margin-bottom: 40px;
+	border-bottom: 2px solid #ddd;
+}
+
+@media only screen and (max-width: 900px) {
+	.errthin{
+		padding: 0px;
+	}
+
+	.sidemenu{
+		left: -170px;
+		top: 0px;
+		background: #fff;
+		height: 100%;
+	}
+
+	.swiped{
+		left: 0px;
+	}
+
+	.sitecontent{
+		float: left;
+		width: 100%;
+	}
+
+	[class*="col-"]{
+		width: 100%;
+	}
+}
