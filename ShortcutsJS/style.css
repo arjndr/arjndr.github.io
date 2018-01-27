@@ -1,0 +1,84 @@
+body{
+  margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  background: #fcfcfc;
+}
+
+#menu{
+  padding: 0px 20px 0px 20px;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  background: #fff;
+}
+
+#menu-contain{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#logo{
+  float: left;
+  background-image: url('shrt.png');
+  background-size: 48px 48px;
+  width: 48px;
+  height: 48px;
+}
+
+#star{
+  float: right;
+}
+
+#star iframe{
+  margin-top: 10px;
+}
+
+.outer{
+  padding: 10px;
+  box-sizing: border-box;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  float: left;
+}
+
+.inner{
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+input{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+input:focus{
+  box-shadow: inset 0px -5px 0px #ddd;
+  border-color: #aaa;
+}
+
+code{
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
+  background: #eee;
+}
+
+.button{
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #000;
+  text-decoration: none;
+}
+
+.button:hover{
+  background: #ddd;
+}

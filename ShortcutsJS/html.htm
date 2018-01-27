@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ShortcutsJS</title>
+    <link id="favicon" rel="shortcut icon" href="shrt.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="menu">
+      <div id="menu-contain">
+        <div id="logo"></div>
+        <div id="star">
+          <a class="github-button" href="https://github.com/arjndr/shortcuts.js" data-icon="octicon-star" data-size="large" aria-label="Star arjndr/shortcuts.js on GitHub">Star</a>
+        </div>
+      </div>
+    </div>
+    <div class="outer">
+      <div class="inner">
+        <a href="https://github.com/arjndr/shortcuts.js/#usage" class="button">Get Started</a>
+        <h1 id="shortcut"></h1>
+        <input type="text" id="inp" placeholder="Input">
+        <p id="instruction">Try typing something in the input box, Press Shift+E to destroy the input's shortcut listener</p>
+      </div>
+    </div>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="shortcuts.min.js"></script>
+    <script>
+      var inputShortcut = new Shortcuts(document.getElementById('inp'));
+      var documentShortcut = new Shortcuts(document);
+      document.addEventListener('Shortcut', function (e) {
+        if (navigator.userAgent.indexOf("MSIE") !== -1) {
+          document.getElementById('shortcut').innerText = e.detail.detail.shortcut;
+        } else {
+          document.getElementById('shortcut').innerText = e.detail.shortcut + ' on ' + e.detail.onElement.nodeName;
+        }
+      });
+      document.getElementById('inp').addEventListener('Shift+E', function(){
+        document.getElementById('instruction').innerText = 'Yes! Now try typing something, It has to work';
+        inputShortcut.destroy();
+      });
+    </script>
+  </body>
+</html>
