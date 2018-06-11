@@ -1,131 +1,196 @@
-*{
-	transition: all 0.3s;
-}
-
 body{
-	font-family: 'Source Sans Pro', sans-serif;
-	margin: 0px;
+  margin: 0px;
+  font-family: monospace;
+  font-family: 'Source Code Pro', monospace;
+  background: #272823;
+  font-size: 16px;
 }
 
-html{
-	height: 100%;
-	width: 100%;
+html, body{
+  height: 100%;
+  width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6{
-	font-weight: 600;
+*::selection{
+  background: rgba(255, 255, 255, 0.1);
 }
 
-a{
-	color: inherit;
+#terminal{
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+  border-left: 1px solid rgba(0,0,0,0.2);
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+#terminal::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+#terminal::-webkit-scrollbar-track {
+  background: #23241f;
+}
+ 
+#terminal::-webkit-scrollbar-thumb {
+  background: #1c1d19;
+  border: 4px solid #23241f;
+  border-radius: 50px;
+}
+
+#terminal div{
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 5px 0;
+}
+
+p{
+  margin: 0 0 5px 0;
+}
+
+a, pre{
+  color: #ff5181;
 }
 
 a:hover{
-	text-decoration: none;
+  text-decoration: none;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-[class*="col-"] {
-    float: left;
-    box-sizing: border-box;
-    padding: 8px;
+pre{
+  margin: 10px;
+  font-weight: bold;
+  font-family: inherit;
 }
 
-[class*="col-"] p{
-    margin: 0px;
+pre.showcommand{
+  margin: 0px;
 }
 
-[class*="col-"] img{
-	width: 100%;
-	height: auto;
-	border-radius: 3px;
+.red{
+  color: #f16262;
 }
 
-.errthin{
-	padding: 40px;
-	box-sizing: border-box;
-	position: relative;
+.terminal-output{
+  color: #73e9ff;
+  padding:  0 0 0 30px;
+  box-sizing: border-box;
 }
 
-.sidemenu{
-	position: fixed;
-	float: left;
-	list-style: none;
-	margin: 0px;
-	padding: 20px;
-	box-sizing: border-box;
-	width: 160px;
-	z-index: 1;
-	box-sizing: border-box;
+.nopadding{
+  padding: 0px;
 }
 
-.sidemenu li{
-	margin-top: 5px;
+.greentext{
+  color: #c0e825;
 }
 
-.sidemenu a{
-	color: #323232;
-	display: inline;
-	text-decoration: none;
+.purpletext{
+  color: #d0a6fd;
 }
 
-.sidemenu a:hover{
-	color: #aaa;
+.whitetext{
+  color: #fff;
 }
 
-.logo{
-	font-weight: 900;
-	font-size: 30px;
-	margin-bottom: 20px;
+.light{
+  font-weight: normal;
 }
 
-.sitecontent{
-	float: right;
-	height: 100%;
-	width: calc(100% - 160px);
-	padding: 20px;
-	box-sizing: border-box;
+.terminal-output::selection {
+  color: #272823;
+  background: #73e9ff;
 }
 
-.subcontent{
-	margin-bottom: 40px;
-	border-bottom: 2px solid #ddd;
+#terminalinput{
+  cursor: text;
+  height: 20px;
+  border-radius: 4px;
+  outline: none;
+  caret-color: transparent;
 }
 
-@media only screen and (max-width: 900px) {
-	.errthin{
-		padding: 0px;
+#terminalinput span{
+  vertical-align: text-top;
+  color: #f1f1e4;
+  line-height: 20px;
+}
+
+#terminalinput span#dollar{
+  color: #999999;
+}
+
+#terminalinput.active{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#terminalinput.active #cursor{
+  background: #fff;
+}
+
+#cursor{
+  display: inline-block;
+  height: 20px;
+  line-height: 0px;
+  width: 8px;
+  background: transparent;
+  box-shadow: inset 0 -2px 0px #fff;
+  animation: cursor;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+
+div.project-image{
+  float: left;
+  width: 150px !important;
+  height: 150px;
+  background-size: cover;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+div.project-info{
+  float: left;
+  width: calc(100% - 150px) !important;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@keyframes cursor {
+	0% {
+		opacity: 0;
 	}
-
-	.sidemenu{
-		left: -170px;
-		top: 0px;
-		background: #fff;
-		height: 100%;
+	40% {
+		opacity: 0;
 	}
-
-	.swiped{
-		left: 0px;
+	50% {
+		opacity: 1;
 	}
-
-	.sitecontent{
-		float: left;
-		width: 100%;
+	90% {
+		opacity: 1;
 	}
-
-	[class*="col-"]{
-		width: 100%;
+	100% {
+		opacity: 0;
 	}
+}
+
+.aboutme{
+  white-space: pre-wrap;
+}
+
+@media only screen and (max-width: 1020px) {
+  #name{
+    display: none;
+  }
+
+  div.project-image{
+    display: none !important;
+  }
+
+  div.project-info{
+    width: 100% !important;
+  }
 }
